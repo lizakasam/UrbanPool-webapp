@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+.design-1 {
+  --d1-bg: #0a0a0f;
+  --d1-surface: #12121a;
+  --d1-surface-light: #1a1a25;
+  --d1-neon-green: #39ff14;
+  --d1-neon-cyan: #00f5ff;
+  --d1-neon-pink: #ff00ff;
+  --d1-neon-orange: #ff6b35;
+  --d1-text: #ffffff;
+  --d1-text-muted: #8b8b9e;
+
+  background: var(--d1-bg);
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--d1-text);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.bg-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.grid-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--d1-neon-cyan),
+    transparent
+  );
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+.grid-line:nth-child(odd) {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--d1-neon-green),
+    transparent
+  );
+}
+
+@keyframes gridPulse {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateX(100%);
+  }
+}
+
+.speed-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.speed-line {
+  position: absolute;
+  right: -200px;
+  width: 300px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--d1-neon-green),
+    transparent
+  );
+  animation: speedMove 3s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes speedMove {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(-150vw);
+    opacity: 0;
+  }
+}
+
+.hero-d1 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem 4rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-d1-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-d1-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--d1-surface);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  font-size: 0.85rem;
+  color: var(--d1-neon-green);
+}
+
+.hero-d1-pulse {
+  width: 8px;
+  height: 8px;
+  background: var(--d1-neon-green);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* Hero Visual */
+.hero-d1-visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+}
+
+.hero-d1-car {
+  position: relative;
+  width: 300px;
+  height: 120px;
+}
+
+.hero-d1-car-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--d1-surface-light),
+    var(--d1-surface)
+  );
+  border-radius: 20px;
+  position: relative;
+  transform: skewX(-10deg);
+  border: 2px solid rgba(57, 255, 20, 0.3);
+  box-shadow:
+    0 0 40px rgba(57, 255, 20, 0.2),
+    inset 0 0 40px rgba(57, 255, 20, 0.05);
+}
+
+.hero-d1-car-body::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  right: 10%;
+  height: 40%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--d1-neon-cyan),
+    transparent
+  );
+  opacity: 0.5;
+  filter: blur(10px);
+}
+
+.hero-d1-car-glow {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 60px;
+  height: 60px;
+  background: var(--d1-neon-green);
+  border-radius: 50%;
+  filter: blur(30px);
+  animation: carGlow 2s ease-in-out infinite;
+}
+
+@keyframes carGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+.hero-d1-route {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.hero-d1-route-point {
+  width: 40px;
+  height: 40px;
+  background: var(--d1-surface);
+  border: 2px solid var(--d1-neon-cyan);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: routePulse 2s ease-in-out infinite;
+}
+
+@keyframes routePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(0, 245, 255, 0);
+  }
+}
+
+.hero-d1-route-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--d1-neon-cyan);
+}

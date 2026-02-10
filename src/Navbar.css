@@ -2,13 +2,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  position: fixed;
+  top: 24px;
+  left: 0;
+  z-index: 1000;
 }
 
 .nav-container {
-  width: 90%;
-  max-width: 1200px;
-  padding: 14px 30px;
+  width: 80%;
+  padding: 4px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,16 +22,52 @@
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.nav-container::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 50px;
+  padding: 1px;
+  background: 
+    /* Top-right */
+    radial-gradient(
+      ellipse 60% 40% at 85% 15%,
+      rgba(44, 255, 154, 0.9) 0%,
+      rgba(44, 255, 154, 0.5) 30%,
+      transparent 60%
+    ),
+    /* Bottom-left*/
+    radial-gradient(
+        ellipse 60% 40% at 15% 85%,
+        rgba(44, 255, 154, 0.9) 0%,
+        rgba(44, 255, 154, 0.5) 30%,
+        transparent 60%
+      );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 /* LEFT */
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   color: white;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .logo {
@@ -39,9 +77,10 @@
 /* CENTER */
 .nav-center {
   display: flex;
-  gap: 30px;
+  gap: 28px;
   list-style: none;
   color: #cfcfcf;
+  font-size: 14px;
 }
 
 .nav-center li {
@@ -70,9 +109,10 @@
 .signup {
   background: linear-gradient(135deg, #2cff9a, #00c76a);
   border: none;
-  padding: 8px 20px;
-  border-radius: 25px;
+  padding: 8px 18px;
+  border-radius: 20px;
   color: black;
   font-weight: 600;
   cursor: pointer;
+  font-size: 14px;
 }

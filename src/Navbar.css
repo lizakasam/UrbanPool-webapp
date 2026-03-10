@@ -67,11 +67,11 @@
   gap: 8px;
   color: white;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 17px;
 }
 
-.logo {
-  font-size: 22px;
+.nav-left img {
+  max-width: 45px;
 }
 
 /* CENTER */

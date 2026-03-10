@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-left">
-          <span className="logo"></span>
+          <img src="/logo-carpool.png"></img>
           <span className="brand">UrbanPool</span>
         </div>
 

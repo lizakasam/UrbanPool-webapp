@@ -33,6 +33,7 @@ const LandingPage = () => {
 
   return (
     <div className="design-1" ref={heroRef}>
+      {/* Animated Background Grid */}
       <div className="bg-grid">
         {[...Array(20)].map((_, i) => (
           <div
@@ -43,6 +44,7 @@ const LandingPage = () => {
         ))}
       </div>
 
+      {/* Floating Speed Lines */}
       <div className="speed-lines">
         {[...Array(8)].map((_, i) => (
           <div
@@ -59,14 +61,41 @@ const LandingPage = () => {
 
       <Navbar />
 
+      {/* Hero Section */}
       <section className="hero-d1">
+        <div className="hero-d1-content">
+          <h1 className="hero-d1-title">
+            <span className="hero-d1-word">Share</span>
+            <span className="hero-d1-word hero-d1-accent">Rides.</span>
+            <br />
+            <span className="hero-d1-word">Split</span>
+            <span className="hero-d1-word hero-d1-accent">Costs.</span>
+          </h1>
+
+          <p className="hero-d1-subtitle">
+            Connect with travelers heading your way. Save up to 60% on
+            long-distance trips while meeting interesting people along the
+            journey.
+          </p>
+
+          <div className="hero-d1-cta-group">
+            <button className="hero-d1-btn hero-d1-btn-primary">
+              Find a Ride
+              <ArrowRight className="hero-d1-btn-icon" />
+            </button>
+            <button className="hero-d1-btn hero-d1-btn-secondary">
+              Offer a Seat
+            </button>
+          </div>
+        </div>
+
         <div className="hero-d1-visual">
           <div className="hero-d1-car">
             <div className="hero-d1-car-body" />
             <div className="hero-d1-car-glow" />
           </div>
           <div className="hero-d1-route">
-            {[...Array(5)].map((_, i) => (
+            {[...Array(2)].map((_, i) => (
               <div
                 key={i}
                 className="hero-d1-route-point"
